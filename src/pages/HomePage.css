@@ -1,0 +1,152 @@
+.hero-section {
+    background-color: var(--color-secondary-black);
+    min-height: 100vh;
+    padding-top: var(--header-height, 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    padding-bottom: 2rem; 
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    color: var(--color-accent);
+    font-size: clamp(4rem, 12vw, 9rem);
+    line-height: 1;
+    margin-bottom: 1rem;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.hero-subtitle {
+    color: var(--color-accent);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    margin-top: 0;
+    margin-bottom: 4rem;
+    font-family: var(--font-display);
+    font-weight: 400; 
+    letter-spacing: 1px;
+}
+
+.text-focus-in {
+    -webkit-animation: text-focus-in 2s ease-in 0.5s both;
+    animation: text-focus-in 2s ease-in 0.5s both;
+}
+
+.hero-cta-button {
+    background-color: var(--color-accent);
+    color: var(--color-secondary-white);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.hero-cta-button:hover {
+    opacity: 1;
+    background-color: transparent;
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.stacking-cards {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.sticky-card{
+    position: sticky;
+    top: var(--header-height);
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-ritual{
+    z-index: 10;
+    background-color: var(--color-secondary-light);
+}
+
+.card-plans{
+    z-index: 20;
+    background-color: var(--color-secondary-white);
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.15);
+}
+
+.card-plans .subscriptions-header-block {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-subscriptions {
+    z-index: 30;
+    background-color: var(--color-accent);
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.15);
+}
+
+.card-subscriptions .registration-form-block {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.normal-scroll-content {
+    position: relative;
+    z-index: 40;
+    width: 100%;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+}
+
+/* Animación glow para el Título */
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 15px #e92e16;
+    }
+
+    to {
+        text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.6), 
+            0 0 25px #ff391f, 
+            0 0 45px #be1b05;
+    }
+}
+
+/* Animación focus-in para el subtítulo */
+
+@keyframes text-focus-in {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding-top: 60px; 
+    }
+
+    .sticky-card {
+        top: 0;
+    }
+}

@@ -1,0 +1,335 @@
+.subscriptions-header-block {
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 2rem; 
+    position: relative; 
+    color: var(--color-secondary-white); 
+}
+
+/* Oscurecer la imagen de fondo para mejorar la legibilidad del texto */
+.subscriptions-header-block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 1;
+}
+
+.subscriptions-main-title {
+    font-size: 5rem;
+    color: var(--color-accent);
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+    text-shadow: 
+        3px 4px 0px rgba(0,0,0,0.8), 
+        0px 10px 30px rgba(0,0,0,0.6);
+}
+
+/* Grilla de 3 planes */
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.plan-card {
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); 
+    height: 100%;
+    position: relative;
+    border: none;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                filter 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: scale(1.03); /* Crece sutilmente hacia el frente */
+    filter: brightness(1.1); /* Se ilumina levemente al activarse */
+    z-index: 10;
+}
+
+.plan-logo {
+    font-family: var(--font-display); 
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: left;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-style: italic;
+}
+
+.plan-title {
+    font-family: var(--font-body); 
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.plan-description {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.plan-signature {
+    font-family: var(--font-body); 
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-top: auto;
+    display: block;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+/* Estilos Específicos de los Planes */
+.plan-noir {
+    background-color: var(--color-accent);
+    color: black;
+}
+
+.plan-noir .plan-logo, 
+.plan-noir .plan-signature {
+    color: black;
+    font-weight: 900;
+}
+
+.plan-blanc {
+    background-color: var(--color-secondary-light);
+    color: var(--color-primary-dark);
+}
+
+.plan-blanc .plan-logo, 
+.plan-blanc .plan-signature {
+    color: var(--color-accent);
+    font-weight: 900;
+}
+
+.plan-equilibre {
+    background-color: var(--color-primary-dark);
+    color: var(--color-secondary-light);
+}
+
+.plan-equilibre .plan-logo, .plan-equilibre .plan-signature {
+    color: var(--color-secondary-light);
+    font-weight: 900;
+}
+
+
+/* Bloque de Registro (Formulario) */
+.registration-form-block {
+    background-color: var(--color-accent);
+    padding: 6rem 2rem;
+    overflow: hidden;
+}
+
+.registration-content {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr; 
+    gap: 6rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.registration-info {
+    position: relative;
+    min-height: 350px;
+}
+
+.registration-title {
+    font-size: 3.5rem; /* Tamaño impacto */
+    color: var(--color-secondary-white);
+    line-height: 1.1;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 5;
+}
+
+.large-cup-icon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 250px;
+    position: absolute;
+    bottom: -60px;
+    right: -20px;
+    transform: rotate(5deg);
+    opacity: 0.9;
+    z-index: 1;
+}
+
+/* 9.3. Estilos del Formulario */
+
+.subscription-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: .5rem;
+    background-color: var(--color-secondary-white);
+    color: var(--color-primary-dark);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.form-input::placeholder {
+    color: rgba(26, 10, 7, 0.7);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-cta-button {
+    background-color: var(--color-secondary-white);
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    border-radius: .5rem;
+    padding: 1rem 2rem;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 1rem;
+}
+
+.form-cta-button:hover {
+    background-color: var(--color-accent); 
+    color: var(--color-secondary-white); 
+    border-color: var(--color-secondary-white);
+}
+
+.form-cta-button:disabled {
+    cursor: not-allowed;
+    position: relative;
+    overflow: hidden;
+    color: var(--color-secondary-white);
+    border-color: var(--color-accent);
+    
+    background: linear-gradient(
+        90deg, 
+        #e03d31 0%, 
+        #ff7b72 50%, 
+        #e03d31 100%
+    );
+    background-size: 200% 100%;
+    animation: loading-sweep-red 3s infinite linear;
+}
+
+@keyframes loading-sweep-red {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1023px){
+    .large-cup-icon {
+    width: 180px;
+    bottom: -55px;
+    right: -20px;
+}
+}
+
+/* --- TABLET Y MOBILE (Hasta 768px) --- */
+@media (max-width: 768px) {
+    .subscriptions-main-title {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    .registration-title {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    /* 2. El Carrusel de Planes */
+    .plans-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1.5rem;
+        padding: 1rem 1.5rem 3rem;
+        margin: 0 -1.5rem;
+        scrollbar-width: none;
+    }
+
+    .plans-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .plan-card {
+        min-width: 85%;
+        scroll-snap-align: center;
+        height: auto;
+        padding: 3rem 2rem 2rem;
+    }
+
+    /* 3. Bloque de Formulario (Stack Vertical) */
+    .registration-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 0;
+    }
+
+    .registration-info {
+        width: 100%;
+        margin: 0 auto;
+        min-height: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .large-cup-icon {
+        width: 100px;
+        position: relative;
+        bottom: 0;
+        right: 0;
+        margin: 1rem auto 0;
+        display: block;
+    }
+
+    .registration-form-block {
+        padding: 4rem 1.5rem;
+    }
+}
+
+/* --- MINI MOBILE (Hasta 480px) --- */
+@media (max-width: 480px) {
+    .subscriptions-main-title {
+        font-size: 3.5rem;
+    }
+
+    .plan-card {
+        min-width: 90%;
+    }
+
+    .plan-title {
+        font-size: 2rem;
+    }
+}

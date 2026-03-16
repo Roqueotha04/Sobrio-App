@@ -1,0 +1,80 @@
+import ContactForm from './ContactForm';
+import './Footer.css';
+import { ASSETS } from '../constants/assets';
+
+export default function Footer() {
+
+    return (
+        <footer className="main-footer">
+            <div className="footer-wrapper">
+
+                {/* 1. Título */}
+                <section id='contact'>
+                    <div className='footer-content'>
+                        <div className="footer-header">
+                            <h2 className="charlamos-title">
+                                Club de Brindis
+                                <img src={ASSETS.ICON_CUP_WHITE} alt="copa" className="footer-title-icon" />
+                            </h2>
+                            <p>Queremos acompañarte en cada momento</p>
+                        </div>
+
+                        {/* 2. Contacto */}
+                        <div className="footer-contact-section">
+                            <div className="footer-cta-text">
+                                <p className="highlight-text">Escribinos tu consulta y te <br /> respondemos en menos de 24 hs</p>
+                            </div>
+                            <div className="footer-form-container">
+                                <ContactForm />
+                            </div>
+                        </div>
+
+
+                        {/* 3. Logo y links */}
+                        <div className="footer-logo-links-block">
+                            <div className="footer-logo">
+                                <img src={ASSETS.LOGO_WHITE} alt="Sobrio Isotipo" className="footer-isotipo-large" />
+                            </div>
+
+                            <div className="footer-links">
+                                {/* Agregamos el título Enlaces */}
+                                <h3 className="links-title">Enlaces</h3>
+                                <ul>
+                                    <li><a href="#subscriptions">Suscribirse</a></li>
+                                    <li><a href="#faq">Preguntas frecuentes</a></li>
+                                    <li><a href="#hero">Ir al inicio</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* 4. Redes Sociales */}
+                        <div className="footer-social-block">
+                            <p>sobriomdp@gmail.com <span className="icon-white">
+                                <img src={ASSETS.LOGO_MAIL}
+                                    alt="logo de mail" />
+                            </span>
+                            </p>
+                            <p>2235647826 <span className="icon-white">
+                                <img src={ASSETS.LOGO_WHATSAPP}
+                                    alt="logo de whatsapp" />
+                            </span>
+                            </p>
+                            <p>instagram.com/sobrio.ar
+                                <span className="icon-white">
+                                    <img src={ASSETS.LOGO_INSTAGRAM}
+                                        alt="logo de instagram" />
+                                </span>
+                            </p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <div className="footer-bottom">
+                    <p>© 2026 SOBRIO - Todos los derechos reservados<br />
+                        Diseñado por <a href="https://www.linkedin.com/in/roque-othacehe" target="_blank" rel="noreferrer">Roque Othacehe</a></p>
+                </div>
+            </div>
+        </footer>
+    );
+}

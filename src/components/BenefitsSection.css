@@ -1,0 +1,112 @@
+.benefits-section {
+    background-color: var(--color-primary-dark); 
+    padding: 6rem 2rem;
+    color: var(--color-secondary-white);
+}
+
+.benefits-content-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 2fr; 
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* --- Bloque de Texto y Lista --- */
+.benefits-title {
+    font-size: 3rem;
+    color: var(--color-secondary-white);
+    margin-bottom: 2.5rem;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 3rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    transition: transform 0.3s ease;
+    cursor: default;
+}
+
+.benefit-item:hover {
+    transform: translateX(10px);
+}
+
+.check-icon {
+    color: var(--color-accent);
+    font-size: 1rem;
+    margin-right: 1rem;
+    font-weight: bold;
+    border: 2px solid var(--color-accent);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* --- CTA del Bloque de Beneficios (Botón Rojo) --- */
+.benefits-cta-button {
+    background-color: var(--color-accent); 
+    color: var(--color-secondary-white); 
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.benefits-cta-button:hover {
+    opacity: 1;
+    background-color: transparent;
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* --- Bloque de Imagen --- */
+.benefits-image-block {
+    position: relative;
+}
+
+.box-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                0 0 20px rgba(224, 61, 49, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.benefits-image-block:hover .box-image {
+    transform: scale(1.02);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .benefits-content-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-cta-button{
+        display: flex;
+        justify-self: center;
+    }
+
+    .benefits-image-block{
+        display: none;
+    }
+}

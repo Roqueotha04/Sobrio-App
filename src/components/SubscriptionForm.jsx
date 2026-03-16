@@ -1,0 +1,105 @@
+import { useState } from 'react';
+import { toast } from 'sonner';
+
+export default function SubscriptionForm() {
+
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const form = e.target;
+
+        const nameRegex = /^[a-zA-ZÀ-ÿ\s]{3,40}$/;
+        const phoneRegex = /^[0-9+ ]{8,20}$/;
+
+        if (!nameRegex.test(form.name.value)) {
+            return toast.error("El nombre debe tener al menos 3 letras y no contener números.");
+        }
+
+        if (!phoneRegex.test(form.phone.value)) {
+            return toast.error("Por favor, ingresa un teléfono válido (mínimo 8 dígitos).");
+        }
+
+        setLoading(true);
+
+        // SIMULACIÓN DE ENVÍO
+        setTimeout(() => {
+
+            toast.success("¡Bienvenido a Sobrio!", {
+                description: "Te hemos enviado un correo de confirmación."
+            });
+
+            form.reset();
+            setLoading(false);
+
+        }, 2000);
+    };
+
+    return (
+        <form className="subscription-form" onSubmit={handleSubmit}>
+            <input
+                type="text"
+                name="name"
+                placeholder="Tu nombre completo"
+                aria-label="Nombre completo"
+                className="form-input"
+                required
+            />
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Tu mail"
+                aria-label="Correo electrónico"
+                className="form-input"
+                required
+            />
+
+            <input
+                type="tel"
+                name="phone"
+                placeholder="Tu telefono"
+                aria-label="Número de teléfono"
+                className="form-input"
+                required
+            />
+
+            <input
+                type="text"
+                name="address"
+                placeholder="Tu dirección"
+                aria-label="Dirección de envío"
+                className="form-input"
+                required
+            />
+
+            <select
+                name="plan"
+                className="form-input form-select"
+                aria-label="Selecciona un plan de suscripción"
+                required
+            >
+                <option value="" disabled>Que plan elegis</option>
+                <option value="Noir">Noir</option>
+                <option value="Blanc">Blanc</option>
+                <option value="Equilibre">Équilibre</option>
+            </select>
+
+            <textarea
+                name="preferences"
+                placeholder="Contanos que vinos te gustan"
+                aria-label="Preferencias de vinos"
+                className="form-input form-textarea"
+                required
+            ></textarea>
+
+            <button
+                type="submit"
+                className="form-cta-button"
+                disabled={loading}
+            >
+                {loading ? 'Enviando...' : 'Enviar'}
+            </button>
+        </form>
+    );
+}

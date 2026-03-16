@@ -1,0 +1,168 @@
+.faq-section {
+    background-color: var(--color-secondary-light);
+    padding: 6rem 0;
+    width: 100%;
+}
+
+.faq-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.faq-main-title {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 4rem;
+}
+
+.faq-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; 
+    gap: 2rem;
+    align-items: start;
+    position: relative; /* Necesario para que la copa se ubique detrás en móvil */
+}
+
+/* --- Acordeón --- */
+.faq-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    transition: all 0.4s ease;
+}
+
+.faq-item.active {
+    border-bottom-color: var(--color-accent);
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 1rem 0;
+    cursor: pointer;
+    color: var(--color-primary-dark);
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--color-accent);
+}
+
+.faq-item.active .faq-question {
+    color: var(--color-accent);
+}
+
+.faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+}
+
+.faq-item.active .faq-answer {
+    grid-template-rows: 1fr;
+}
+
+.faq-answer-content {
+    overflow: hidden;
+}
+
+.faq-answer p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: rgba(26, 10, 7, 0.8);
+}
+
+/* --- Decoración de la Copa --- */
+.faq-decoration {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.faq-glass-icon {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    filter: drop-shadow(10px 20px 30px rgba(0,0,0,0.05));
+    animation: float-cup 6s ease-in-out infinite;
+}
+
+@keyframes float-cup {
+    0%, 100% { transform: rotate(5deg) translateY(0); }
+    50% { transform: rotate(10deg) translateY(-20px); }
+}
+
+/* --- Footer de la sección --- */
+.faq-footer {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.faq-footer-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.faq-footer-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.faq-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: transparent; 
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--color-accent);
+    font-weight: bold;
+    font-family: var(--font-body);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.faq-cta:hover {
+    background-color: var(--color-accent);
+    color: var(--color-secondary-white);
+}
+
+/* --- RESPONSIVE: Aquí es donde la copa pasa detrás --- */
+
+@media (max-width: 768px) {
+    .faq-container {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-decoration {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        opacity: 0.15;
+        pointer-events: none;
+        width: 100%;
+    }
+
+    .faq-item {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .faq-glass-icon {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 576px){
+    .faq-main-title{
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,403 @@
+.footer-header {
+    grid-area: header;
+}
+
+.footer-contact-section {
+    grid-area: form;
+}
+
+.footer-logo-links-block {
+    grid-area: logo;
+}
+
+.footer-social-block {
+    grid-area: social;
+}
+
+.main-footer {
+    background-color: var(--color-primary-dark);
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-content {
+    padding: 2rem 4rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    grid-template-areas:
+        "header header header"
+        "form logo social";
+    align-items: start;
+    gap: 4rem;
+}
+
+
+.footer-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.footer-header p {
+    font-family: var(--font-display);
+    color: white;
+    font-size: 2.1rem;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.charlamos-title {
+    font-family: var(--font-body);
+    font-size: 3.5rem;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+}
+
+.footer-title-icon {
+    width: 45px;
+    height: auto;
+}
+
+/* 3. Bloque de contacto centrado */
+.footer-contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer-cta-text {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 2rem;
+    text-align: center;
+    margin-right: 0;
+}
+
+.footer-cta-text .highlight-text {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.footer-form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo de inputs */
+.footer-input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    gap: 1rem;
+}
+
+.footer-label {
+    min-width: 70px;
+    font-size: 1.1rem;
+    text-align: right;
+}
+
+.footer-framed-input {
+    background: transparent;
+    border: 1px solid white;
+    border-top: none;
+    color: white;
+    padding: 8px 12px;
+    width: 100%;
+    max-width: 350px;
+    outline: none;
+}
+
+.footer-textarea {
+    min-height: 40px;
+    resize: none;
+}
+
+.footer-submit-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-submit-btn {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 0.4rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.footer-submit-btn:hover {
+    background-color: white;
+    color: var(--color-primary-dark);
+}
+
+.footer-submit-btn:disabled {
+    cursor: not-allowed;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    border-color: #333;
+
+    background: linear-gradient(90deg,
+            #1A0A07 0%,
+            #3d1c15 50%,
+            #1A0A07 100%);
+    background-size: 200% 100%;
+    animation: loading-sweep-dark 3s infinite linear;
+}
+
+@keyframes loading-sweep-dark {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.footer-logo-links-block {
+    display: flex;
+    align-items: center;
+}
+
+.footer-isotipo-large {
+    width: 130px;
+    height: auto;
+}
+
+.links-title {
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+}
+
+/* 6. Enlaces */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li a {
+    color: white;
+    text-decoration: none;
+    line-height: 2.5;
+    font-size: 1.2rem;
+}
+
+.footer-social-block {
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.footer-social-block p {
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+.icon-white img {
+    width: 2.5rem;
+}
+
+.footer-bottom {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+.footer-bottom a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+/* --- MEDIA QUERIES --- */
+
+/* BREAKPOINT 1: TABLET / LAPTOP PEQUEÑA (Max 1023px) */
+@media (max-width: 1023px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header form"
+            "logo social";
+        gap: 4rem 2rem;
+        padding: 1rem;
+    }
+
+    .footer-header {
+        align-items: flex-start;
+        justify-content: center;
+        text-align: left;
+        margin-bottom: 0;
+        height: 100%;
+    }
+
+    .footer-contact-section {
+        align-items: flex-end;
+    }
+
+    .footer-logo-links-block {
+        justify-self: start;
+    }
+
+    .footer-social-block {
+        justify-self: end;
+    }
+}
+
+/* BREAKPOINT 2: MOBILE GRANDE (Max 900px)*/
+@media (max-width: 900px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header header"
+            "form form"
+            "logo social";
+        gap: 3rem;
+    }
+
+    .footer-header {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-contact-section {
+        padding: 0 3rem;
+        align-items: center;
+    }
+
+    .footer-cta-text {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .footer-framed-input {
+        max-width: 100%;
+    }
+
+    .footer-isotipo-large {
+        width: 90px;
+    }
+
+    .footer-social-block p {
+        gap: 5px;
+    }
+
+    .icon-white img {
+        width: 2.2rem;
+    }
+}
+
+/* BREAKPOINT 3: MOBILE PEQUEÑO (Max 525px) */
+@media (max-width: 525px) {
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "header header"
+            "form form"
+            "logo social";
+        
+        gap: 3rem 0;
+        padding: 0;
+    }
+
+    /* --- HEADER Y FORM (Ocupan todo el ancho) --- */
+    .footer-header p {
+        font-size: 1.5rem;
+    }
+
+    .charlamos-title {
+        font-size: 2.5rem;
+        justify-content: center;
+    }
+
+    .footer-contact-section {
+        width: 100%;
+        padding: 0;
+        align-items: center;
+    }
+    
+    .footer-form-container, .footer-cta-text {
+        max-width: 100%;
+    }
+
+    /* --- LOGO Y ENLACES (Columna Izquierda) --- */
+    .footer-logo-links-block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .footer-isotipo-large {
+        width: 70px;
+    }
+
+    .links-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-links li a {
+        font-size: 0.9rem;
+        line-height: 2;
+    }
+
+    /* --- REDES SOCIALES (Columna Derecha) --- */
+    .footer-social-block {
+        justify-self: end;
+        text-align: right;
+        padding-right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%; 
+    }
+
+    .footer-social-block p {
+        font-size: 0.85rem;
+        gap: 6px;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 1rem;
+        word-break: break-word; 
+        max-width: 100%;
+    }
+
+    .icon-white img {
+        width: 1.6rem;
+    }
+}
