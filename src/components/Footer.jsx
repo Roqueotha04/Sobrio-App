@@ -72,7 +72,7 @@ export default function Footer() {
 
                 <div className="footer-bottom">
                     <p>© 2026 SOBRIO - Todos los derechos reservados<br />
-                        Diseñado por <a href="https://www.linkedin.com/in/roque-othacehe" target="_blank" rel="noreferrer">Roque Othacehe</a></p>
+                        Diseñado por <a href="https://www.linkedin.com/company/estudio-ve" target="_blank" rel="noreferrer">Estudio Ve</a></p>
                 </div>
             </div>
         </footer>
